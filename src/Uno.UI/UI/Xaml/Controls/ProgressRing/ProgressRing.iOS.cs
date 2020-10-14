@@ -40,11 +40,11 @@ namespace Windows.UI.Xaml.Controls
 
 		partial void OnIsActiveChangedPartial(bool _) => TrySetNativeAnimating();
 
-		private void TrySetNativeAnimating()
+		partial void TrySetNativeAnimating()
 		{
 			if (_native != null)
 			{
-				if (IsActive && IsEnabled && IsLoaded)
+				if (IsActive && IsLoaded)
 				{
 					_native.StartAnimating();
 				}
