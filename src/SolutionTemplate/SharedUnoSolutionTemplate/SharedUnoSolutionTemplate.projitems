@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects Condition="'$(MSBuildVersion)' == '' Or '$(MSBuildVersion)' &lt; '16.0'">$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>513b99e9-6438-45a0-8ef8-09e775aa3ccd</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>SharedUnoSolutionTemplate</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="$(MSBuildThisFileDirectory)logo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)Resources\UnoPlatformPackage.ico" />
+    <Content Include="$(MSBuildThisFileDirectory)Resources\VSPackage1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)app.config" />
+    <None Include="$(MSBuildThisFileDirectory)Key.snk" />
+    <None Include="$(MSBuildThisFileDirectory)Readme.md" />
+    <None Include="$(MSBuildThisFileDirectory)uno-fluentui-assets.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)VSPackage.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)UnoPlatformPackage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UnoStaticGlobalPropertiesProvider.cs" />
+  </ItemGroup>
+</Project>
